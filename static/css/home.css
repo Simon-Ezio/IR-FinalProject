@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.nav {
+  text-align: right;
+  margin-right: 30px;
+}
+.nav ul {
+  list-style: none;
+}
+.nav ul li {
+  display: inline-block;
+  padding: 8px;
+}
+.nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-family: arial, sans-serif;
+  font-size: 0.8em;
+}
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.nav-menu {
+  background-image: url(https://ssl.gstatic.com/gb/images/i1_1967ca6a.png);
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+.nav-menu:hover {
+  opacity: 0.8;
+}
+
+.ga {
+  height: 30px;
+  width: 30px;
+  background-position: -130px -310px;
+}
+
+.gn {
+  height: 20px;
+  width: 20px;
+  background-position: -194px 48px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.main {
+  position: relative;
+  top: 20%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+form .textbox {
+  width: 500px;
+  height: 40px;
+  margin: 20px 0 35px 0;
+  font-size: 1em;
+  border: 1px #ddd solid;
+  box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.2);
+}
+form .textbox:hover {
+  box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.25);
+}
+form .textbox:focus {
+  box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.25);
+}
+form .button {
+  width: 130px;
+  height: 38px;
+  border: none;
+  color: #555;
+  font-size: 0.8em;
+  background-color: #f2f2f2;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+form .button:hover {
+  border: #bcbcbc 1px solid;
+  border-radius: 3px;
+  color: black;
+  background-image: linear-gradient(#eee, #dedede);
+  box-shadow: 0px 1px 1px 0px rgba(50, 50, 50, 0.25);
+}
+
+.footer {
+  background-color: #F2F2F2;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+  position: absolute;
+  min-width: 980px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer ul {
+  list-style: none;
+}
+.footer ul li {
+  display: inline-block;
+  margin-right: 20px;
+  color: #666;
+}
+
+.fsl {
+  float: left;
+  white-space: nowrap;
+  margin-left: 30px;
+}
+
+.fsr {
+  float: right;
+  white-space: nowrap;
+  margin-right: 30px;
+}

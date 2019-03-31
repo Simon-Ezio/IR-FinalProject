@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Caption Search for Youtube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Images</a></li>
+        <li><a class="nav-menu ga" href="#" title="Google Apps"></a></li>
+        <li><a class="nav-menu gn" href="#" title="Google Notiications"></a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/>
+      <form action="/" method="GET">
+        <input class="textbox" type="text" name="q"/>
+        <input class="button" type="submit" value="Google Search"/>
+        <input class="button" type="button" value="I'm Feeling Lucky"/>
+      </form>
+    </div>
+    <div class="footer">
+      <ul class="fsl"> 
+        <li>Advertising</li>
+        <li>Business</li>
+        <li>About</li>
+      </ul>
+      <ul class="fsr">
+        <li>Privacy</li>
+        <li>Terms</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+  </body>
+</html>
