@@ -81,15 +81,15 @@ a
     top: -17px;
     left: -12px;
 
-    height: 44px;
-    width: 120px;
+    height: 22px;
+    width: 17px;
 }
 
 .mag-glass
 {
     position: relative;
     top: -12px;
-    left: -25px;
+    left: -15px;
 
     display: inline-block;
     margin-left: 5px;
