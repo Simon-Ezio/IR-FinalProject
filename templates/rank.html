@@ -18,7 +18,7 @@
           <img class="tennis" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_120x44dp.png" alt="">
         </a>
 
-        <input class="search-box" type="text" size="48" name='q'>
+        <input class="search-box" type="text" size="48" name='q' value="{{request.args.get('q', '')}}">
 
         <a href="#"><img class="mic" src="{{ url_for('static', filename='microphone.png') }}" alt=""/></a>
 
@@ -53,141 +53,22 @@
 
     <!--------CONTENT--------
     ------------------------>
-    <h5>About 5,170,000 results (0.37 seconds) </h5>
+    <h5>{{'About {:,} results ({:.2f} seconds)'.format(number, time)}} </h5>
 
     <div class="content">
-
+      {% for et in ranklist %}
       <div class="entry">
-        <a class="lead" href="#">
-With zero coding experience, artist building 180 webpages ...</a>
-        <p class="url">arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica</p>
-        <p class="detail">Jul 26, 2013 - One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
+        <a class="lead" href="{{et['url']}}"> {{et['title']}} </a>
+        <p class="url"> {{et['url_display'] if 'url_display' in et else et['url']}} </p>
+        <p class="detail"> {{et['desc']}} </p>
       </div>
       <!-- .entry -->
+      {% endfor %}
 
-      <div class="entry">
-        <a class="lead" href="#">
-Build Your Own Webpage | Codecademy</a>
-        <p class="url">https://www.codecademy.com/.../web-beginner-en-LceTK Codecademy
-        </p>
-        <p class="detail">Build Your Own Webpage. What you'll be making. Before we ask you to write a bunch of code, we think it's helpful for you to see exactly what you'll be making in ....</p>
-      </div>
       <!-- .entry -->
 
-      <div class="entry">
-        <a class="lead" href="#">
-build this website - Google Search - kleopetrov.com</a>
-        <p class="url">kleopetrov.com/google/
-        </p>
-        <p class="detail">With zero coding experience, artist building 180 webpages ... arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica. Jul 26, 2013 - 117 ...</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-How I Built This Website - Phil's Old Radios</a>
-        <p class="url">arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica</p>
-        <p class="detail">Jul 26, 2013 - One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-How Do We Know They Need This Webpage? | Inc.com</a>
-        <p class="url">https://www.codecademy.com/.../web-beginner-en-LceTK Codecademy
-        </p>
-        <p class="detail">Build Your Own Webpage. What you'll be making. Before we ask you to write a bunch of code, we think it's helpful for you to see exactly what you'll be making in ....</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-build this website - Google Search - kleopetrov.com</a>
-        <p class="url">kleopetrov.com/google/
-        </p>
-        <p class="detail">With zero coding experience, artist building 180 webpages ... arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica. Jul 26, 2013 - 117 ...</p>
-      </div>
-      <!-- .entry -->
-      <div class="entry">
-        <a class="lead" href="#">
-With zero coding experience, artist building 180 webpages ...</a>
-        <p class="url">arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica</p>
-        <p class="detail">Jul 26, 2013 - One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-How Do We Know They Need This Webpage? | Inc.com</a>
-        <p class="url">https://www.codecademy.com/.../web-beginner-en-LceTK Codecademy
-        </p>
-        <p class="detail">Build Your Own Webpage. What you'll be making. Before we ask you to write a bunch of code, we think it's helpful for you to see exactly what you'll be making in ....</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-build this website - Google Search - kleopetrov.com</a>
-        <p class="url">kleopetrov.com/google/
-        </p>
-        <p class="detail">With zero coding experience, artist building 180 webpages ... arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica. Jul 26, 2013 - 117 ...</p>
-      </div>
-      <!-- .entry -->
-      <div class="entry">
-        <a class="lead" href="#">
-With zero coding experience, artist building 180 webpages ...</a>
-        <p class="url">arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica</p>
-        <p class="detail">Jul 26, 2013 - One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-Build Your Own Webpage | Codecademy</a>
-        <p class="url">https://www.codecademy.com/.../web-beginner-en-LceTK Codecademy
-        </p>
-        <p class="detail">Build Your Own Webpage. What you'll be making. Before we ask you to write a bunch of code, we think it's helpful for you to see exactly what you'll be making in ....</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-build this website - Google Search - kleopetrov.com</a>
-        <p class="url">kleopetrov.com/google/
-        </p>
-        <p class="detail">With zero coding experience, artist building 180 webpages ... arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica. Jul 26, 2013 - 117 ...</p>
-      </div>
-      <!-- .entry -->
-      <div class="entry">
-        <a class="lead" href="#">
-With zero coding experience, artist building 180 webpages ...</a>
-        <p class="url">arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica</p>
-        <p class="detail">Jul 26, 2013 - One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-Build Your Own Webpage | Codecademy</a>
-        <p class="url">https://www.codecademy.com/.../web-beginner-en-LceTK Codecademy
-        </p>
-        <p class="detail">Build Your Own Webpage. What you'll be making. Before we ask you to write a bunch of code, we think it's helpful for you to see exactly what you'll be making in ....</p>
-      </div>
-      <!-- .entry -->
-
-      <div class="entry">
-        <a class="lead" href="#">
-build this website - Google Search - kleopetrov.com</a>
-        <p class="url">kleopetrov.com/google/
-        </p>
-        <p class="detail">With zero coding experience, artist building 180 webpages ... arstechnica.com/.../with-zero-coding-experience-artist-build... Ars Technica. Jul 26, 2013 - 117 ...</p>
-      </div>
-      <!-- .entry -->
-      
     </div>
     <!-- .content -->
-    
-    
 
     <!--------RELATED SEARCHES--------
     <div class="related">
@@ -225,13 +106,9 @@ build this website - Google Search - kleopetrov.com</a>
     -->
 
     <ul class="numbers">
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a href="#">7</a></li>
+      {% for i in range(px, py) %}
+      <li><a href="{{'{}?q={}&p={}'.format(request.base_url, request.args.get('q'), i)}}">{{i+1}}</a></li>
+      {% endfor %}
     </ul>
 
     <!--------FOOTER--------
