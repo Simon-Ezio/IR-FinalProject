@@ -20,7 +20,7 @@ def home():
                 title='title one',
                 url='#',
                 url_display='a fake url is here',
-                desc='this is desc, this should be long ' * 12
+                desc='this is desc, this should be long ' * 9
             ),
             dict(
                 title='title two',
