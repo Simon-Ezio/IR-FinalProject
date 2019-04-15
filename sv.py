@@ -17,16 +17,16 @@ def home():
         number = 5170000
         rank_list = (
             dict(
-                title='title one',
+                title='title one: blablabla',
                 url='#',
-                url_display='a fake url is here',
-                desc='this is desc, this should be long ' * 9
+                url_display='https://www.a/fake/url/.../is/here',
+                desc=(((85, '01:25'), 'this is desc, this should be long'),) * 4
             ),
             dict(
-                title='title two',
+                title='title two: a fake title',
                 url='#',
-                url_display='a url is here',
-                desc='this is also desc, but short'
+                url_display='https://www.a/fake/url/.../is/here',
+                desc=(((85, '01:25'), 'this is also desc, but short'),) * 2
             ),
         )
         rank_list = rank_list * 8
