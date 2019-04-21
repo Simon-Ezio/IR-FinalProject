@@ -1,6 +1,17 @@
 from flask import (Flask, request, redirect, Response, url_for, jsonify, render_template)
 
+from search import VideoSearch
+
+
+searcher = VideoSearch()
+
 app = Flask(__name__)
+
+
+def second2str(sec):
+    hours = sec / 60
+    seconds = sec % 60
+    return "{}:{:0>2d}".format(hours, seconds)
 
 
 @app.route('/')
@@ -13,26 +24,14 @@ def home():
     except:
         pass
     if q:
-        time = 0.37
-        number = 5170000
-        rank_list = (
-            dict(
-                title='title one: blablabla',
-                url='#',
-                url_display='https://www.a/fake/url/.../is/here',
-                desc=(((85, '01:25'), 'this is desc, this should be long'),) * 4
-            ),
-            dict(
-                title='title two: a fake title',
-                url='#',
-                url_display='https://www.a/fake/url/.../is/here',
-                desc=(((85, '01:25'), 'this is also desc, but short'),) * 2
-            ),
-        )
-        rank_list = rank_list * 8
+        import time
+        time_start = time.time()
+        searcher.searchByQuery(q)
+        number = searcher.num_search_result
+
         max_page = number // 15
-        if p >= max_page:
-            p = max_page - 1
+        if p > max_page:
+            p = max_page
         if p < 0:
             p = 0
         px = p-3
@@ -40,9 +39,13 @@ def home():
             px = 0
         py = px + 7
         if py > max_page:
-            py = max_page-1
+            py = max_page
 
-        return render_template('rank.html', time=time, number=number, ranklist=rank_list, p=p, px=px, py=py)
+        time_cost = time.time() - time_start
+        rank_list = searcher.getResultByInterval(p*15, (p+1)*15)
+
+        return render_template('rank.html', time=time_cost, number=number, ranklist=rank_list, p=p, px=px, py=py,
+                               second2str=second2str)
     else:
         return render_template('home.html')
 
