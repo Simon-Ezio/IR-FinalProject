@@ -11,7 +11,7 @@ import requests
 from googleapiclient.discovery import build
 from pycaption import WebVTTReader, DFXPReader
 
-DEVELOPER_KEY = 'AIzaSyBofGDrV8lckZmEu9iVP9gaMUCyCkFZhww' 
+DEVELOPER_KEY = 'youtube-api-key' 
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
